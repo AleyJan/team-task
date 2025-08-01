@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    />
+    <style>
+      .view-details {
+        display: flex;
+        gap: 20px;
+        padding: 0 80px;
+        margin-top: 10px;
+      }
+      .img-details {
+        width: 50%;
+      }
+      .img-details img {
+        width: 80%;
+      }
+      .mul-img img {
+        width: 14%;
+        cursor: pointer;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        margin: 18px;
+      }
+      .product-details {
+        width: 50%;
+      }
+      .product-details h2 {
+        margin-bottom: 10px;
+        font-size: 24px;
+      }
+
+      .product-details p {
+        margin: 10px 0;
+      }
+
+      .product-details button {
+        padding: 10px 20px;
+        background-color: #4caf50;
+        border: none;
+        color: white;
+        font-weight: bold;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <section id="header">
+      <a href="#"
+        ><img
+          src="./img/lo-removebg-preview.png"
+          width="100px"
+          alt="logo"
+          class="logo"
+      /></a>
+      <div>
+        <ul id="navbar">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./product.html" class="active">Product</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="register.html">Signup</a></li>
+          <li>
+            <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="view-section">
+      <div class="view-details">
+        <div class="img-details">
+          <img src="./img/products/f1.jpg" alt="Main Product" id="main-img" />
+          <div class="mul-img">
+            <img
+              src="./img/products/f1.jpg"
+              alt=""
+              onclick="changeImage(this)"
+            />
+            <img
+              src="./img/products/f2.jpg"
+              alt=""
+              onclick="changeImage(this)"
+            />
+            <img
+              src="./img/products/f3.jpg"
+              alt=""
+              onclick="changeImage(this)"
+            />
+            <img
+              src="./img/products/f4.jpg"
+              alt=""
+              onclick="changeImage(this)"
+            />
+          </div>
+        </div>
+        <div class="product-details">
+          <h2>Product 1</h2>
+          <p><strong>Price:</strong> Rs. 4100</p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Great
+            product!
+          </p>
+          <button>Add to Cart</button>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      function changeImage(el) {
+        const mainImg = document.getElementById("main-img");
+        mainImg.src = el.src;
+      }
+    </script>
+  </body>
+</html>
