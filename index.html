@@ -3,7 +3,56 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Practice branches and PR in git</title>
+    <title>ecommerce website</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
   </head>
-  <body></body>
+  <body onload="renderProducts(); updateCartCount(); updateNavbarAuthStatus(); checkLoginSuccess();">
+    <section id="header">
+      <a href="#"
+        ><img
+          src="./img/lo-removebg-preview.png"
+          width="50px"
+          alt="logo"
+          class="logo"
+      /></a>
+      <div>
+        <ul id="navbar">
+          <li><a href="./index.html" class="active">Home</a></li>
+          <li><a href="./product.html">Product</a></li>
+          <li><a href="./login.html">Login</a></li>
+          <li><a href="./register.html">Signup</a></li>
+          <div class="d-flex align-items-center ms-auto">
+          <div id="navbar-user-controls" class="me-3"></div> </div>
+          <li>
+            <a href="./cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="hero">
+      <h4>Trade-in-offer</h4>
+      <h2>Super value deals</h2>
+      <h1>On all products</h1>
+      <p>Save more with coupons & upto 70% off!</p>
+      <button onclick="window.location.href='product.html'">Shop Now</button>
+    </section>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({ duration: 800, once: true });</script>
+  <script src="auth.js"></script>
+  <script src="script.js"></script>
+
+  <script>
+    const message = localStorage.getItem("alertMessage");
+    if (message) {
+      showAlert(message, "warning");
+      localStorage.removeItem("alertMessage");
+    }
+  </script>
+  </body>
 </html>

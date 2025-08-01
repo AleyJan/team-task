@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cart</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Custom CSS for Mobile -->
+  <style>
+    @media (max-width: 576px) {
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      .fw-bold.fs-5 {
+        font-size: 1rem !important;
+      }
+
+      #cart-items {
+        font-size: 0.9rem;
+      }
+
+      .btn {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.75rem;
+      }
+    }
+  </style>
+</head>
+<body onload="renderCart(); updateNavbarAuthStatus();">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="index.html"><img
+          src="./img/lo-removebg-preview.png"
+          width="50px"
+          alt="logo"
+          class="logo"
+      /></a>
+      <div class="d-flex align-items-center ms-auto">
+        <div id="navbar-user-controls" class="me-3"></div>
+        <div id="cart-button-container" class="d-none">
+          <a href="cart.html" class="btn btn-light position-relative">
+            Cart
+            <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Cart Section -->
+  <div class="container mt-5">
+    <!-- Back Button -->
+    <div class="mb-3">
+      <a href="index.html" class="btn btn-outline-secondary">&larr; Back to Shopping</a>
+    </div>
+
+    <h2 class="mb-4">Your Cart</h2>
+    <div id="cart-items"></div>
+
+    <hr />
+    <div class="d-flex justify-content-between fw-bold fs-5 mb-5">
+      <div>Total Quantity: <span id="total-qty">0</span></div>
+      <div>Total Price: Rs <span id="total-price">0</span></div>
+    </div>
+  </div>
+
+  <!-- Floating Alert -->
+  <div id="custom-alert" class="alert alert-warning position-fixed d-none" style="bottom: 20px; right: 20px; z-index: 9999;"></div>
+
+  <script src="auth.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
